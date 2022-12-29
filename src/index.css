@@ -20,23 +20,80 @@ html, body {
 }
 
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   padding: 30px;
 }
 
+body, .mainContainer, 
+.dieContainer, .held {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .mainContainer {
+  flex-direction: column;
   background-color: var(--ivory);
   height: 400px;
   max-width: 750px;
   border-radius: 25px;
-  box-shadow: 0px 0px 40px 10px var(--grey);
+  justify-content: space-evenly;
   padding: 20px;
 }
 
 .diceContainer {
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(2, 1fr);
+}
+
+.mainContainer,
+.dieContainer {
+  box-shadow: 0px 0px 5px 3px var(--grey);
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.dieContainer {
+  border: 3px solid var(--blue);
+  background-color: var(--yellow);
+}
+
+.dieContainer,
+.held {
+  height: 60px;
+  width: 60px;
+  font-size: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.held {
+  border: 3px solid var(--yellow);
+  background-color: var(--orange-red);
+}
+
+.rollBtn{
+  background-color: var(--blue);
+  color: var(--ivory);
+  height: 50px;
+  width: 100px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-family: inherit;
+}
+
+.rollBtn:hover {
+  cursor: pointer;
+  background-color: var(--orange-red);
+}
+
+.rollBtn:active {
+  background-color: var(--orange-red);
+  color: var(--ivory);
+  box-shadow: inset 5px 5px 10px -3px var(--blue);
 }
