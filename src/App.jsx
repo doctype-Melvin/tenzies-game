@@ -10,11 +10,12 @@ export default function App() {
     
     const [dice, setDice] = useState(allNewDice())
     const [tenzies, setTenzies] = useState(false)
+    const [counter, setCounter] = useState(0)
 
     const reset = () => {
         setDice(allNewDice())
         setTenzies(false)
-       
+        setCounter(0)
     }
 
     useEffect(() => {
@@ -41,9 +42,11 @@ export default function App() {
     }
     
     function rollDice() {
+        setCounter(prevCount => prevCount + 1)
         setDice(prevState => prevState.map(item => {
             return item.isHeld ? item : {...item, value: randomizer()}
         }))
+        console.log(counter)
     }
     
     const holdDice = (id) => {
@@ -62,9 +65,10 @@ export default function App() {
 
     return (
         <main className="mainContainer">
-           {tenzies ? <Confetti numberOfPieces={600} wind={0.02} initialVelocityX={10} /> : null}
+           {tenzies && <Confetti numberOfPieces={600} wind={0.02} initialVelocityX={10} />}
             <h1 className="title">Tenzies</h1>
-            <p className="para">Roll the dice and hold all that are the same</p>
+            <span className="para">Roll the dice and hold all that are the same value</span>
+            {tenzies ? <span className="info">You only needed {counter} clicks to win!</span> : <div className="info"></div>}
             <div className="diceContainer">
                 {diceRender}
             </div>

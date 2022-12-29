@@ -33,11 +33,11 @@ body, .mainContainer,
 .mainContainer {
   flex-direction: column;
   background-color: var(--ivory);
-  height: 400px;
+  height: 500px;
   max-width: 750px;
   border-radius: 25px;
   justify-content: space-evenly;
-  padding: 20px;
+  padding: 10px 25px;
 }
 
 .diceContainer {
@@ -76,6 +76,17 @@ h2 {
   background-color: var(--orange-red);
 }
 
+.dieContainer:hover,
+.held:hover {
+  background-color: var(--blue);
+  border: 3px solid var(--yellow);
+}
+
+.info {
+  height: 25px;
+  font-weight: 600;
+}
+
 .rollBtn{
   background-color: var(--blue);
   color: var(--ivory);
@@ -87,8 +98,13 @@ h2 {
   font-family: inherit;
 }
 
-.rollBtn:hover {
+.dieContainer,
+.rollBtn:hover,
+.held {
   cursor: pointer;
+}
+
+.rollBtn:hover {
   background-color: var(--orange-red);
 }
 
