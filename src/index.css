@@ -2,9 +2,41 @@
   box-sizing: border-box;
 }
 
+:root {
+  --orange-red: #ff5e5b;
+  --grey: #d8d8d8;
+  --ivory: #FFFFEA;
+  --blue: #00CECB;
+  --yellow: #FFED66;
+}
+
+
 html, body {
   padding: 0;
   margin: 0;
   height: 100vh;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--orange-red);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.mainContainer {
+  background-color: var(--ivory);
+  height: 400px;
+  max-width: 750px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 40px 10px var(--grey);
+  padding: 20px;
+}
+
+.diceContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
