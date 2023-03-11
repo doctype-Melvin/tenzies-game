@@ -46,7 +46,6 @@ export default function App() {
         setDice(prevState => prevState.map(item => {
             return item.isHeld ? item : {...item, value: randomizer()}
         }))
-        console.log(counter)
     }
     
     const holdDice = (id) => {
