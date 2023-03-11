@@ -1,6 +1,6 @@
 # Tenzies Game
 
-[Play the game](https://shinytenzies.netlify.app/)
+<a href="https://shinytenzies.netlify.app/" target="_blank">Play the game</a>
 
 I made this game during the Scrimba React course.
 This project was a nice and comprehensive
